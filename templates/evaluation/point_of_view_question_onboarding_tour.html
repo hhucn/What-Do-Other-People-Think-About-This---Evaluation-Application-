@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+
+    {% load static %}
+    <script type="application/javascript"
+            src="https://evaluation.comment-recommendation.cs.hhu.de/js/node_modules/shepherd.js/dist/js/shepherd.js"></script>
+    <link rel="stylesheet" type="text/css"
+          href="https://evaluation.comment-recommendation.cs.hhu.de/js/node_modules/shepherd.js/dist/css/shepherd.css"/>
+    <link rel="stylesheet" type="text/css" href="https://evaluation.comment-recommendation.cs.hhu.de/css/style.css">
+
+    <title>Evaluation Application</title>
+</head>
+<body>
+<div class="container">
+
+    <div class="row progress" id="progress">
+        <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="" aria-valuemin="0"
+             aria-valuemax="100">60%
+        </div>
+    </div>
+
+    <div class="row justify-content-between">
+        <div class="col-auto">
+            <h1>Evaluation</h1>
+        </div>
+        <div class="col-auto">
+            <a href="/log-out">
+                <button class="btn btn-primary" type="submit">Log Out</button>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        <div>
+
+            <div class="container">
+                <div id="article" class="row">
+                    <div class="col">
+                        <h2>Article Title: </h2>
+                    </div>
+                    <div class="col-9">
+                        <details>
+                            <summary id="article-title">Should You Get Another Covid Shot Now?</summary>
+                            <ul>
+                                <li>Keywords: Pharmaceuticals;prescription drugs,Vaccines
+                                    Immunization,Coronavirus;COVID-19;Pandemic,Seasons,Service Content
+                                </li>
+                            </ul>
+                        </details>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h2>User Comment: </h2>
+                    </div>
+                    <div class="col-9">
+                        <p id="user-comment">I'm done with the shots. I'm about to turn 65, workout regularly, am not
+                            overweight, eat healthy. Had Covid last winter, was in bed for 5 days. Not the end of the
+                            world.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="task-description" class="row alert alert-primary">
+                <strong>Task:</strong>
+                Your task is to evaluate the provided comment sets in relation to the displayed user comment. Which set
+                provides a more balanced set of opinions? We consider a set of comments to be more balanced if it
+                provides a more diverse set of opinions with a logical and coherent argument. This means that it
+                contains arguments both for and against the topic of the user comment.
+
+                If no set provides a better selection of comments than the other. Please click the button "No set of
+                comments is better than the other"
+            </div>
+
+            <div id="hint-study-scope" class="row alert alert-warning">
+                <strong>IMPORTANT!!!!</strong>
+                Please do not assess the comments based on the stated facts! We are complete aware that some
+                comments provide false or hateful information regarding climate change etc. Here, we are only
+                interested to assess whether the content of the comment shown fits well with the user comment. Fact
+                checking is out of scope for this user study.
+            </div>
+
+            <div class="row ">
+                <div class="col align-self-center" id="no-selection-button">
+                    <a class="recommendation-comment"
+                       href="{% url 'question' %}">
+                        <h3>No set of comments is better than the other</h3>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row" id="recommendations">
+                <div class="col-6" id="recommendation-set-1">
+                    <a class="recommendation-comment"
+                       href="/question">
+                        <h2 class="recommendation-comment">Recommendation Set 1: </h2>
+                        <ul class="list-group">
+
+                            <li class="list-group-item"><p
+                                    class="recommendation-comment"> It’s mostly older people, like those who are 77, who
+                                are at high risk of being infected and
+                                having extreme cases because of weakened immune systems or underlying health issues like
+                                heart
+                                disease. Covid, like the Flu, evolves and just like flu shots you can’t rely on getting
+                                vaccinated two or four times to protect you forever. Even if one has not that high of a
+                                risk, it
+                                is also about protecting others who are more vulnerable. </p></li>
+
+                            <li class="list-group-item"><p
+                                    class="recommendation-comment">I just had a mild case of Covid a couple of weeks ago
+                                - even though I'm fully vaccinated and boosted. That helped keep it mild in my case
+                                (sore throat and burning eyes and a low fever). I've known a half-dozen people who've
+                                had Covid in the last month. Since I successfully fought off the virus in 4 days, I
+                                think I'm self-immunized for a few more months. I'll wait until the new vaccine is out.
+                            </p></li>
+
+                            <li class="list-group-item"><p
+                                    class="recommendation-comment">No. In a word. Excess deaths remain extremely high in
+                                vaccinated countries. Dr Malhotra, a highly regarded British cardiologist, and others
+                                have published peer reviewed studies finding major problems with mRNA vaccine safety
+                                studies. The risk from covid is far less than from the vaccines at this point.
+                                https://journalofmetabolichealth.org/index.php/jmh/article/view/71/224.</p></li>
+
+
+                        </ul>
+                    </a>
+                </div>
+                <div class="col-6" id="recommendation-set-2">
+                    <a class="recommendation-comment"
+                       href="/question">
+                        <h2 class="recommendation-comment">Recommendation Set 2: </h2>
+                        <ul class="list-group">
+
+                            <li class="list-group-item"><p
+                                    class="recommendation-comment">The truth is the experts have no idea what is best.
+                                When there was no vaccine it was clear that you should get the first one approved.
+                                Perhaps plus a booster. Now who knows.
+                                people.</p></li>
+
+                            <li class="list-group-item"><p
+                                    class="recommendation-comment">As a 30 year old, the sickest I've been in the last
+                                decade was after the second Moderna shot. 48 hours of feeling like my body was tearing
+                                itself to shreds. No sleep. Piercing headache. Body aches the likes of which I've never
+                                experienced.
+                                Unfortunately, I have no interest in getting another Covid vaccine.
+
+
+                            </p></li>
+
+                            <li class="list-group-item"><p
+                                    class="recommendation-comment">@MC A vaccine provides “instructions” to the body’s
+                                immune systems to enable the immune system response to the invading microorganism to be
+                                swifter and more specific. The person’s body does the work - all the vaccine provides is
+                                a “picture” (antigen) that resembles the real microorganism. Like many things in life,
+                                vaccines may not provide the perfect “picture” (in this case, the virus is changing
+                                constantly), and not all people may be able to “recognize” the “picture”, so some
+                                vaccines may not be perfectly functional for every single recipient.
+
+                                There is a separate type of passive immunity (antiserum) where antibodies made by a
+                                separate individual are injected into the individual at risk, in order to provide an
+                                immediate response. An example is the rabies antiserum (immunoglobulin) - the bitten
+                                person’s own immune system simply cannot respond quickly enough to stop the rabies
+                                virus, which kills rapidly.
+                            </p></li>
+
+
+                        </ul>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var tour = new Shepherd.Tour({
+                useModalOverlay: true,
+                defaultStepOptions: {
+                    cancelIcon: {
+                        enabled: true
+                    },
+                    classes: 'class-1 class-2',
+                    scrollTo: {behavior: 'smooth', block: 'center'}
+                }
+            });
+
+
+            tour.addStep({
+                id: 'Overall-Task',
+                text: 'This is the second step. Your task here will be to decide which of the two given sets provides a more well-balance set of opinions for the displayed user comment.',
+                buttons: [
+                    {
+                        action: tour.next,
+                        text: 'Next'
+                    }
+                ]
+            });
+
+            tour.addStep({
+                id: 'Overall-Task',
+                text: 'A set of comments is considered as more well-balanced if it provides a more diverse set of opinions for the discussion. This means it contains opinions in favor of the topic of the user comment and against it.',
+                buttons: [
+                    {
+                        action: tour.next,
+                        text: 'Next'
+                    }
+                ]
+            });
+
+            tour.addStep({
+                id: 'User-Comment',
+                text: 'This is the same user comment, we saw before. The set of comments are the recommendations we saw before. However, now we have to assess the overall set of comments if they provide a well balanced set of opinions.',
+                attachTo: {
+                    element: '#user-comment',
+                    on: 'bottom'
+                },
+                buttons: [
+                    {
+                        action: tour.next,
+                        text: 'Next'
+                    }
+                ]
+            })
+
+            tour.addStep({
+                id: 'task-description',
+                text: 'If you are unsure about  your task, you can always review it here.',
+                attachTo: {
+                    element: '#task-description',
+                    on: 'bottom'
+                },
+                buttons: [
+                    {
+                        action: tour.next,
+                        text: 'Next'
+                    }
+                ]
+            })
+
+            tour.addStep({
+                id: 'recommendation-sets',
+                text: 'These are the comment recommendation sets. Your task is to choose which provides a more well-balanced set of opinions for the given user comment',
+                attachTo: {
+                    element: '#recommendations',
+                    on: 'bottom'
+                },
+                buttons: [
+                    {
+                        action: tour.next,
+                        text: 'Next'
+                    }
+                ]
+            })
+
+            tour.addStep({
+                id: 'recommendation-set-1',
+                text: 'This is recommendation set 1. We consider this as a balanced set of opinions because it contains logical and coherent arguments in favor and against the provided user comment. Even the last comment is considered as a good recommendation because it provides a coherent and logical argumentation with sources although these are false claims. ',
+                attachTo: {
+                    element: '#recommendation-set-1',
+                    on: 'bottom'
+                },
+                buttons: [
+                    {
+                        action: tour.next,
+                        text: 'Next'
+                    }
+                ]
+            })
+
+            tour.addStep({
+                id: 'recommendation-set-2',
+                text: 'and this is recommendation set 2. We consider this not as a balanced set of opinions because although one comment argues about not wanting another shoot due to severe side-effects. The other two comments do not argue in favor for getting a booster shoot for Covid-19. Therefore, this set is too one-sided or the comments do not argue about the specific topic of the user comment.',
+                attachTo: {
+                    element: '#recommendation-set-2',
+                    on: 'bottom'
+                },
+                buttons: [
+                    {
+                        action: tour.next,
+                        text: 'Next'
+                    }
+                ]
+            })
+
+            tour.addStep({
+                id: 'recommendation-set-2',
+                text: "If you don't think that one set of comments is better than the other. Please click here.",
+                attachTo: {
+                    element: '#no-selection-button',
+                    on: 'bottom'
+                },
+                buttons: [
+                    {
+                        action: tour.next,
+                        text: 'Next'
+                    }
+                ]
+            })
+
+            tour.addStep({
+                id: 'start-study',
+                text: 'To start, please click on one of the recommendation sets.',
+                attachTo: {
+                    element: '#recommendation-set-1',
+                    on: 'bottom'
+                },
+                buttons: [
+                    {
+                        action: tour.next,
+                        text: 'Next'
+                    }
+                ]
+            })
+
+            tour.start();
+        });
+    </script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+</div>
+</body>
+</html>

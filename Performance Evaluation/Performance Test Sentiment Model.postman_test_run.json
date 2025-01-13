@@ -1,0 +1,252 @@
+{
+	"id": "a8a32118-8560-420f-9df8-e1c90a920015",
+	"name": "Performance Test Sentiment Model",
+	"timestamp": "2024-11-25T15:59:45.598Z",
+	"collection_id": "14204518-c252c57a-5f35-4ca9-9611-9371d9639367",
+	"folder_id": 0,
+	"environment_id": "14204518-ff8aacfb-4a46-4e1f-b897-1b00dc6823b3",
+	"totalPass": 0,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "ba12a7fe-df00-424a-95ae-49a042ca36ef",
+			"name": "NyTimes Trump",
+			"time": 17912,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				18134,
+				17988,
+				18727,
+				17947,
+				18831,
+				17928,
+				18664,
+				18647,
+				18635,
+				17912
+			],
+			"allTests": [
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{}
+			]
+		},
+		{
+			"id": "1fe83f16-0ec5-4b30-becb-937ba4d354ad",
+			"name": "Breitbart Trump",
+			"time": 17489,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				16975,
+				17462,
+				16444,
+				17506,
+				16779,
+				17682,
+				16642,
+				17476,
+				16752,
+				17489
+			],
+			"allTests": [
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{}
+			]
+		},
+		{
+			"id": "813cc033-a8c2-4f09-b121-88a1de38e8dc",
+			"name": "NyTimes Abortion",
+			"time": 10952,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				12992,
+				11112,
+				11897,
+				11205,
+				11874,
+				11047,
+				11859,
+				10915,
+				11766,
+				10952
+			],
+			"allTests": [
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{}
+			]
+		},
+		{
+			"id": "44170261-b83d-43ce-a7b4-a4ec3fc19b2c",
+			"name": "Breitbart Abortion",
+			"time": 14015,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				13620,
+				14290,
+				13707,
+				14226,
+				12977,
+				14123,
+				13311,
+				14251,
+				13298,
+				14015
+			],
+			"allTests": [
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{}
+			]
+		},
+		{
+			"id": "0063761b-dfcf-4292-910d-6c2e54d59dca",
+			"name": "NyTimes Climate Change",
+			"time": 5008,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4857,
+				4901,
+				4903,
+				5004,
+				4919,
+				4906,
+				5099,
+				4839,
+				4910,
+				5008
+			],
+			"allTests": [
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{}
+			]
+		},
+		{
+			"id": "7e9d66ef-76f8-451d-b989-47a025f8382e",
+			"name": "Breitbart Climate Change",
+			"time": 10845,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				11420,
+				10837,
+				11661,
+				10738,
+				11770,
+				10739,
+				10848,
+				10725,
+				11761,
+				10845
+			],
+			"allTests": [
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{}
+			]
+		}
+	],
+	"count": 10,
+	"totalTime": 768747,
+	"collection": {
+		"requests": [
+			{
+				"id": "ba12a7fe-df00-424a-95ae-49a042ca36ef",
+				"method": "GET"
+			},
+			{
+				"id": "1fe83f16-0ec5-4b30-becb-937ba4d354ad",
+				"method": "GET"
+			},
+			{
+				"id": "813cc033-a8c2-4f09-b121-88a1de38e8dc",
+				"method": "GET"
+			},
+			{
+				"id": "44170261-b83d-43ce-a7b4-a4ec3fc19b2c",
+				"method": "GET"
+			},
+			{
+				"id": "0063761b-dfcf-4292-910d-6c2e54d59dca",
+				"method": "GET"
+			},
+			{
+				"id": "7e9d66ef-76f8-451d-b989-47a025f8382e",
+				"method": "GET"
+			}
+		]
+	}
+}

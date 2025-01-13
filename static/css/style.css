@@ -1,0 +1,73 @@
+#user-comment {
+    font-size: 21px;
+}
+
+.select-button {
+    margin: 30px;
+}
+
+#no-selection-button {
+    border: solid black 2px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    display: flex;
+}
+
+.errorlist {
+    color: red;
+    font-weight: bold;
+}
+
+#recommended-comment {
+    border: solid black 2px;
+    border-radius: 10px;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    margin: 30px;
+    padding: 15px;
+}
+
+#article-title {
+    font-size: 26px;
+}
+
+.recommendation-comment {
+    color: black;
+}
+
+#mini-page {
+    position: absolute;
+    z-index: 100;
+    width: 800px; /* Adjust as needed */
+    height: 250px; /* Adjust as needed */
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+#task-description-field {
+    border-style: groove;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+#task-description-summary {
+    font-size: 26px;
+}
+
+
+#consent-declined {
+    height: 100vh; /* Viewport height */
+    width: 100vw; /* Viewport width */
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.progress {
+    margin: 10px;
+}
