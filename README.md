@@ -1,14 +1,13 @@
 # What-Do-Other-People-Think-About-This--Evaluation-Application
 
-This repository provides the code implementation for our assessment tool designed for the paper `What Do Other People Think About This? Recommending Relevant and Diverse User Comments in Comment sections`.
-
-This Django web application enables users to join in from any location of their choice. Additionally, it provides the flexibility for users to pause their evaluation and resume it at any subsequent time.
-
-The application obtains recommendations for participants to assess by accessing the REST API of our deployed recommendation model. To facilitate this, the application is supplied with a csv file containing user comments, which the recommendation model utilizes to generate the recommendations.
+This repository provides the implementation for our assessment tool designed for the paper `What do other people think about this? Recommending Relevant and Diverse User Comments in Comment sections`. This Django-based web application allows users to participate from any location of their preference. Moreover, it offers the capability for users to halt their evaluation process and continue it at a later point. The application obtains recommendations for participants to assess by accessing the REST API of our deployed recommendation model. To enable this, a CSV file with user comments is provided to the application, which the recommendation model uses to produce the recommendations.
 
 The paper outlines the evaluation methodology, which comprises two stages. Initially, participants individually examine and scrutinize each recommendation to determine if the particular recommendation effectively corresponds to the user's comment.
 
+![evaluation_single_comment](EvaluationSingleComment.png)
+
 During the second stage, the participants thoroughly assess the entire collection of recommendations and compare them to a randomly selected set of recommendations from the same article. This comparison aims to determine whether the collection reflects more diverse perspectives as the random recommendations.
+![evaluation_set](EvaluationSet.png)
 
 ## Setup
 Ensure that the following tools are installed:
