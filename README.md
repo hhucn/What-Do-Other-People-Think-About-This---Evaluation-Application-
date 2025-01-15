@@ -1,6 +1,6 @@
 # What-Do-Other-People-Think-About-This--Evaluation-Application
 
-This repository provides the code implementation for our assessment tool designed for the paper `hat do other people think about this? Recommending Relevant and Diverse User Comments in Comment sections`.
+This repository provides the code implementation for our assessment tool designed for the paper `What Do Other People Think About This? Recommending Relevant and Diverse User Comments in Comment sections`.
 
 This Django web application enables users to join in from any location of their choice. Additionally, it provides the flexibility for users to pause their evaluation and resume it at any subsequent time.
 
